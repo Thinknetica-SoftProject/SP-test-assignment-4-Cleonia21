@@ -15,4 +15,20 @@
 #
 #
 ## Решение:
+#md5 << "abcdef609043"
 
+require 'digest'
+
+md5 = Digest::MD5.new
+str = gets
+res = -1
+num = -1
+
+while res != 0 do
+	num += 1
+	buf_str = "#{str}#{num}"
+	buf_str = md5.hexdigest buf_str
+	res = buf_str.index("00000")
+end
+
+puts num

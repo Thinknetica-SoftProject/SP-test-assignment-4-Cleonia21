@@ -16,6 +16,7 @@
 #
 ## Решение:
 
+file = File.new("./data/1.txt", "r:UTF-8")
+str = file.read
 
-
-
+puts str.count("(") - str.count(")")

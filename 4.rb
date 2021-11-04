@@ -16,4 +16,19 @@
 #
 ## Решение:
 
+file = File.new("./data/4.txt", "r:UTF-8")
+lines = file.readlines
+sum = 0
 
+
+for line in lines do
+	param_mas = line.split("x").map(&:to_i).sort
+
+	long = param_mas[0]
+	height = param_mas[1]
+	width = param_mas[2]
+
+	sum += 2 * (long * width + height * width) + 3 * long * height
+end
+
+puts sum

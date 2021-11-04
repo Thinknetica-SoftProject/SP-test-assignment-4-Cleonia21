@@ -10,4 +10,11 @@
 #
 ## Решение:
 
+file = File.new("./data/3.txt", "r:UTF-8")
+lines = file.readlines
 
+for line in lines do
+	sum += line.split('	').map(&:to_i).max - line.split('	').map(&:to_i).min
+end
+
+puts sum
